@@ -1,10 +1,10 @@
 {
-  "name": "qiaomu-blog-opensource",
+  "name": "riskai-blog",
   "version": "0.1.0",
   "private": false,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "test": "vitest",
     "test:run": "vitest run",
     "verify": "bash scripts/verify.sh full",
@@ -65,15 +65,15 @@
     "vitest": "^4.1.5",
     "wrangler": "^4.84.1"
   },
-  "description": "Open-source Cloudflare blog starter with Next.js 16, D1, R2, built-in themes, and AI provider presets.",
+  "description": "RiskAI blog for Cloudflare Workers, built with Next.js 16, D1, R2, themes, and AI provider presets.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joeseesun/qiaomu-blog-opensource.git"
+    "url": "git+https://github.com/Zzzzxb-study/qiaomu-blog-opensource.git"
   },
-  "homepage": "https://github.com/joeseesun/qiaomu-blog-opensource",
+  "homepage": "https://blog.riskai93.com",
   "bugs": {
-    "url": "https://github.com/joeseesun/qiaomu-blog-opensource/issues"
+    "url": "https://github.com/Zzzzxb-study/qiaomu-blog-opensource/issues"
   },
   "cloudflare": {
     "bindings": {

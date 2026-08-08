@@ -1,11 +1,11 @@
 {
-  "name": "乔木博客",
-  "short_name": "乔木博客",
-  "description": "记录思考，分享所学，留住当下。技术、生活、读书笔记的数字花园。",
+  "name": "RiskAI",
+  "short_name": "RiskAI",
+  "description": "记录风险、人工智能与独立思考。",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "background_color": "#f8f5ef",
+  "theme_color": "#2b0707",
   "icons": [
     {
       "src": "/icon-192.png",

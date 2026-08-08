@@ -1,5 +1,7 @@
 const DEV_SITE_URL = 'http://localhost:3000'
-const DEFAULT_PRODUCTION_SITE_URL = 'https://blog.qiaomu.ai'
+import { BRAND } from '@/lib/brand'
+
+const DEFAULT_PRODUCTION_SITE_URL = BRAND.siteUrl
 
 function parseSiteUrl(value: string): URL | null {
   try {

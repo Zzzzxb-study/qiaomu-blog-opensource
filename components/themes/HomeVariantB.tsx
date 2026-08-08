@@ -11,6 +11,7 @@ import { Pagination } from '@/components/Pagination'
 import { ThemeDropdown } from '@/components/ThemeDropdown'
 import type { HomeProps } from '@/components/HomeClient'
 import type { SiteNavLink } from '@/lib/site'
+import { BRAND } from '@/lib/brand'
 
 const ACCENT = '#c44a2a' // editorial red-orange
 const BG = '#f6f3ed'
@@ -38,8 +39,7 @@ function EditorialNavBar({
   navLinks: SiteNavLink[]
 }) {
   const defaultLinks = [
-    { label: 'GitHub', url: 'https://github.com/joeseesun/', openInNewTab: true },
-    { label: 'Twitter', url: 'https://x.com/vista8/', openInNewTab: true },
+    { label: 'GitHub', url: BRAND.githubUrl, openInNewTab: true },
     { label: 'RSS', url: '/feed.xml', openInNewTab: false },
   ]
   const links = navLinks.length > 0 ? navLinks : defaultLinks
@@ -117,17 +117,16 @@ export function HomeVariantB({
       {/* Giant masthead */}
       <div className="editorial-masthead" style={{ padding: '36px 48px 20px', borderBottom: `1px solid ${BORDER}` }}>
         <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <h1 className="editorial-masthead-title" style={{
-            margin: 0,
-            fontSize: 'clamp(72px, 12vw, 180px)',
-            fontWeight: 900,
-            lineHeight: 0.88,
-            letterSpacing: '-0.04em',
-            fontFamily: '"Noto Serif SC", "Source Han Serif SC", Georgia, serif',
-            color: FG,
-          }}>
-            乔木<span style={{ color: ACCENT }}>·</span>博客
-          </h1>
+          <h1 className="sr-only">{BRAND.name}</h1>
+          {/* The app disables Next image optimization globally for Cloudflare. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/riskai-wordmark.png"
+            alt={BRAND.name}
+            width={786}
+            height={522}
+            style={{ width: 'clamp(280px, 46vw, 640px)', height: 'auto', maxHeight: 250, objectFit: 'contain', objectPosition: 'left center' }}
+          />
         </Link>
         <div className="editorial-masthead-meta" style={{
           display: 'flex',
@@ -361,7 +360,7 @@ export function HomeVariantB({
         fontFamily: '"JetBrains Mono", ui-monospace, monospace',
         letterSpacing: '0.1em',
       }}>
-        <span>© {new Date().getFullYear()} 乔木博客</span>
+        <span>© {new Date().getFullYear()} {BRAND.name}</span>
         <span>独立 · 不商业化 · RSS 友好</span>
       </div>
 
