@@ -9,6 +9,7 @@ import { getAppCloudflareEnv } from "@/lib/cloudflare";
 import { getSetting } from "@/lib/db";
 import { resolveDefaultSiteCoverImage } from "@/lib/default-cover-images";
 import { getSiteUrl, getSiteUrlObject } from "@/lib/site-config";
+import { BRAND } from "@/lib/brand";
 
 const geistSans = localFont({
   src: [
@@ -40,13 +41,12 @@ const DEFAULT_SITE_OG_IMAGE = resolveDefaultSiteCoverImage(SITE_URL)
 export const metadata: Metadata = {
   metadataBase: getSiteUrlObject(),
   title: {
-    default: '乔木博客',
-    template: '%s · 乔木博客',
+    default: BRAND.name,
+    template: `%s · ${BRAND.name}`,
   },
-  description: '记录思考，分享所学，留住当下。技术、生活、读书笔记的数字花园。',
+  description: BRAND.description,
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
       { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
       { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
     ],
@@ -64,24 +64,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'zh_CN',
     url: SITE_URL,
-    siteName: '乔木博客',
-    title: '乔木博客',
-    description: '记录思考，分享所学，留住当下。技术、生活、读书笔记的数字花园。',
+    siteName: BRAND.name,
+    title: BRAND.name,
+    description: BRAND.description,
     images: [
       {
         url: DEFAULT_SITE_OG_IMAGE,
         width: 1280,
         height: 720,
-        alt: '乔木博客',
+        alt: BRAND.name,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@vista8',
-    creator: '@vista8',
-    title: '乔木博客',
-    description: '记录思考，分享所学，留住当下。技术、生活、读书笔记的数字花园。',
+    title: BRAND.name,
+    description: BRAND.description,
     images: [DEFAULT_SITE_OG_IMAGE],
   },
 };

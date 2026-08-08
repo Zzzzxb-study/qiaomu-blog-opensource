@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { BRAND } from '@/lib/brand'
 
 interface NavLink {
   label: string
@@ -15,8 +16,7 @@ interface Props {
 }
 
 const defaultLinks: NavLink[] = [
-  { label: 'GitHub', url: 'https://github.com/joeseesun/', openInNewTab: true },
-  { label: 'Twitter', url: 'https://x.com/vista8/', openInNewTab: true },
+  { label: 'GitHub', url: BRAND.githubUrl, openInNewTab: true },
   { label: 'About', url: '/about', openInNewTab: false },
   { label: 'RSS', url: '/feed.xml', openInNewTab: false },
 ]

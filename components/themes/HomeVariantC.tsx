@@ -10,6 +10,7 @@ import { Pagination } from '@/components/Pagination'
 import { ThemeDropdown } from '@/components/ThemeDropdown'
 import type { HomeProps } from '@/components/HomeClient'
 import type { SiteNavLink } from '@/lib/site'
+import { BRAND } from '@/lib/brand'
 
 const BG = '#1a1c2e'
 const FG = '#c8d3e8'
@@ -34,8 +35,7 @@ function TerminalHeader({
   navLinks: SiteNavLink[]
 }) {
   const defaultLinks = [
-    { label: '~/github', url: 'https://github.com/joeseesun/', openInNewTab: true },
-    { label: '~/twitter', url: 'https://x.com/vista8/', openInNewTab: true },
+    { label: '~/github', url: BRAND.githubUrl, openInNewTab: true },
     { label: '~/rss', url: '/feed.xml', openInNewTab: false },
   ]
   const links = navLinks.length > 0
@@ -55,7 +55,7 @@ function TerminalHeader({
       {/* Left: terminal prompt */}
       <div className="terminal-home-prompt" style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
         <span style={{ width: 10, height: 10, borderRadius: '50%', background: ACCENT, display: 'inline-block', boxShadow: `0 0 10px ${ACCENT}` }} />
-        <Link href="/" style={{ color: MUTED, textDecoration: 'none' }}>qiaomu@blog:~$</Link>
+        <Link href="/" style={{ color: MUTED, textDecoration: 'none' }}>riskai@blog:~$</Link>
         <span style={{ color: FG }}>./serve --port=443</span>
       </div>
 
@@ -174,13 +174,13 @@ export function HomeVariantC({
             overflow: 'hidden',
           }}>
 {`  ┌────────────────────────────────────┐
-  │  QIAOMU BLOG  ·  乔木博客          │
+  │  RISKAI BLOG  ·  RiskAI            │
   │  ~/posts  —  reading the future     │
   └────────────────────────────────────┘`}
           </div>
           <div className="terminal-banner-meta" style={{ marginTop: 14, fontSize: 14, display: 'flex', alignItems: 'center', gap: 10 }}>
             <span style={{ color: ACCENT2 }}>&gt;</span>
-            <span style={{ color: FG }}>乔木博客</span>
+            <span style={{ color: FG }}>{BRAND.name}</span>
             <span style={{ color: MUTED }}>{'//'}</span>
             <span style={{ color: MUTED }}>
               {typed}

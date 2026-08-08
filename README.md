@@ -1,15 +1,15 @@
-# Qiaomu Blog Open Source
+# RiskAI Blog
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/joeseesun/qiaomu-blog-opensource)
-[![Use this template](https://img.shields.io/badge/GitHub-Use%20this%20template-111111?logo=github)](https://github.com/joeseesun/qiaomu-blog-opensource/generate)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/Zzzzxb-study/qiaomu-blog-opensource)
+[![GitHub](https://img.shields.io/badge/GitHub-RiskAI-111111?logo=github)](https://github.com/Zzzzxb-study/qiaomu-blog-opensource)
 
 如果你也想拥有一个真正属于自己的学习、写作、分享阵地，而不是把内容完全寄托在平台算法上，这个项目就是为此做的。
 
-Qiaomu Blog Open Source 不是一个只会渲染 Markdown 的静态模板，而是一套完整的博客系统：前后台双编辑器、AI 写作辅助、AI 生图、主题系统、全文检索、API Token、外部发布生态都已经接好，目标就是让你更容易持续写下去。
+RiskAI Blog 不是一个只会渲染 Markdown 的静态模板，而是一套完整的博客系统：前后台双编辑器、AI 写作辅助、AI 生图、主题系统、全文检索、API Token、外部发布生态都已经接好，目标就是持续记录风险、人工智能与独立思考。
 
-- 在线示例：<https://blog.qiaomu.ai/>
-- 介绍文章：<https://blog.qiaomu.ai/qiaomu-blog-opensource>
-- 当前仓库：<https://github.com/joeseesun/qiaomu-blog-opensource>
+- 站点域名：<https://blog.riskai93.com/>
+- 当前仓库：<https://github.com/Zzzzxb-study/qiaomu-blog-opensource>
+- 上游项目：<https://github.com/joeseesun/qiaomu-blog-opensource>
 
 ## 为什么值得做成自己的站
 
@@ -98,7 +98,7 @@ npm run deploy
 ## 本地开发
 
 ```bash
-git clone https://github.com/joeseesun/qiaomu-blog-opensource.git
+git clone https://github.com/Zzzzxb-study/qiaomu-blog-opensource.git
 cd qiaomu-blog-opensource
 npm install
 cp .env.example .env.local
@@ -156,7 +156,6 @@ npm run preview
 
 ## 作者
 
-- 向阳乔木
-- GitHub：<https://github.com/joeseesun>
-- X / Twitter：<https://x.com/vista8>
-- Blog：<https://blog.qiaomu.ai/>
+- RiskAI
+- GitHub：<https://github.com/Zzzzxb-study>
+- Blog：<https://blog.riskai93.com/>

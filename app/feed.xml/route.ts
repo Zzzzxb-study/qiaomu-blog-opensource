@@ -1,9 +1,10 @@
 import { getAppCloudflareEnv } from '@/lib/cloudflare'
 import { getSiteUrl } from '@/lib/site-config'
+import { BRAND } from '@/lib/brand'
 
 const SITE_URL = getSiteUrl()
-const SITE_TITLE = '乔木博客'
-const SITE_DESCRIPTION = '记录思考，分享所学，留住当下。'
+const SITE_TITLE = BRAND.name
+const SITE_DESCRIPTION = BRAND.description
 
 interface RssPost {
   slug: string

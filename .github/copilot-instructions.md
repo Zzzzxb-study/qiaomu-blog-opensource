@@ -1,4 +1,4 @@
-# 向阳乔木博客 - AI 协作指南
+# RiskAI Blog - AI 协作指南
 
 ## 项目概述
 
@@ -22,7 +22,7 @@
 
 ### 品牌定位
 
-**向阳乔木** - 传播 AI 工具和知识的综合性学习平台
+**RiskAI** - 记录风险、人工智能与独立思考
 
 **核心价值**：
 - 温暖而理性：有人情味，但保持专业判断
@@ -112,10 +112,8 @@
 
 ## 品牌资产
 
-- **域名**：blog.qiaomu.ai
-- **X (Twitter)**：[@vista8](https://x.com/vista8)
-- **微信公众号**：向阳乔木推荐看
-- **GitHub**：[@joeseesun](https://github.com/joeseesun)
+- **域名**：blog.riskai93.com
+- **GitHub**：[@Zzzzxb-study](https://github.com/Zzzzxb-study)
 
 ---
 

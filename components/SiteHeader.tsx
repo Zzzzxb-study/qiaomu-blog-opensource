@@ -1,12 +1,14 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useRef, useEffect, useSyncExternalStore } from 'react'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { SearchEntry } from './SearchEntry'
 import { ThemeDropdown } from '@/components/ThemeDropdown'
 import { getClientThemePreference, subscribeToThemeChange, type Theme } from '@/lib/appearance'
 import type { SiteCategoryLink, SiteNavLink } from '@/lib/site'
+import { BRAND } from '@/lib/brand'
 
 export type NavLink = SiteNavLink
 
@@ -19,8 +21,7 @@ interface SiteHeaderProps {
 }
 
 const defaultNavLinks: NavLink[] = [
-  { label: 'GitHub', url: 'https://github.com/joeseesun/', openInNewTab: true },
-  { label: 'Twitter', url: 'https://x.com/vista8/', openInNewTab: true },
+  { label: 'GitHub', url: BRAND.githubUrl, openInNewTab: true },
   { label: 'RSS', url: '/feed.xml', openInNewTab: false },
 ]
 
@@ -99,7 +100,7 @@ export function SiteHeader({
           suppressHydrationWarning
         >
           <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#4ade80', display: 'inline-block', boxShadow: '0 0 8px #4ade80', flexShrink: 0 }} />
-          <span style={{ color: 'var(--editor-muted)' }}>qiaomu@blog:~$</span>
+          <span style={{ color: 'var(--editor-muted)' }}>riskai@blog:~$</span>
           <span style={{ color: 'var(--editor-ink)' }}>./home</span>
         </Link>
       )
@@ -111,10 +112,10 @@ export function SiteHeader({
         <div className="flex items-baseline gap-4 flex-shrink-0" suppressHydrationWarning>
           <Link
             href="/"
-            className="text-lg tracking-tight text-[var(--editor-ink)] hover:text-[var(--editor-accent)] transition-colors duration-200 font-bold"
-            style={{ fontFamily: 'var(--logo-font, "Noto Serif SC", Georgia, serif)' }}
+            className="block transition-opacity duration-200 hover:opacity-75"
+            aria-label={BRAND.name}
           >
-            乔木博客
+            <Image src="/riskai-wordmark.png" alt={BRAND.name} width={96} height={64} className="h-9 w-auto" priority />
           </Link>
           <span style={{ fontFamily: '"JetBrains Mono", ui-monospace, monospace', fontSize: 11, letterSpacing: '0.15em', color: 'var(--editor-muted)' }}>
             VOL.{vol} · {year}年{month}月
@@ -126,10 +127,10 @@ export function SiteHeader({
     return (
       <Link
         href="/"
-        className="text-lg tracking-tight text-[var(--editor-ink)] hover:text-[var(--editor-accent)] transition-colors duration-200 flex-shrink-0 font-bold"
-        style={{ fontFamily: 'var(--logo-font, Georgia, "Noto Serif SC", serif)' }}
+        className="block flex-shrink-0 transition-opacity duration-200 hover:opacity-75"
+        aria-label={BRAND.name}
       >
-        乔木博客
+        <Image src="/riskai-wordmark.png" alt={BRAND.name} width={96} height={64} className="h-10 w-auto" priority />
       </Link>
     )
   }

@@ -1,5 +1,5 @@
 /**
- * Qiaomu Blog Clipper - Popup Script (Redesigned)
+ * RiskAI Blog Clipper - Popup Script (Redesigned)
  *
  * Views: clip | settings | progress | success | error
  */
