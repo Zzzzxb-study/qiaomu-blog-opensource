@@ -1,5 +1,8 @@
 name = "riskai-blog"
 main = "worker.ts"
+routes = [{ pattern = "blog.riskai93.com", custom_domain = true }]
+workers_dev = false
+preview_urls = false
 compatibility_date = "2026-04-14"
 compatibility_flags = ["nodejs_compat", "global_fetch_strictly_public"]
 
@@ -20,9 +23,12 @@ service = "riskai-blog"
 
 [[d1_databases]]
 binding = "DB"
+database_name = "riskai-blog-db"
+database_id = "914118a8-ee55-4e18-90a4-43fe15232dd1"
 
 [[r2_buckets]]
 binding = "IMAGES"
+bucket_name = "riskai-blog-images"
 
 # Optional Queue binding for background jobs. Uncomment after creating the queue.
 # [[queues.producers]]
