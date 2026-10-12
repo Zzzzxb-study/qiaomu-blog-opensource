@@ -1633,6 +1633,10 @@ body {
     display: none;
   }
 
+  .risk-home-nav > a[href="/search"] {
+    display: inline-flex;
+  }
+
   .risk-home-nav {
     gap: 0.65rem;
   }
