@@ -853,6 +853,879 @@ body {
   max-width: 860px;
 }
 
+/* ══════════════════════════════════════════════════════
+   RiskAI editorial homepage — content-first redesign
+   ══════════════════════════════════════════════════════ */
+
+.risk-home-shell {
+  --risk-paper: #f5efe6;
+  --risk-paper-deep: #ede3d6;
+  --risk-ink: #241915;
+  --risk-muted: #71645a;
+  --risk-line: #d9cec0;
+  --risk-wine: #5b1818;
+  --risk-wine-soft: #8b3a32;
+  --risk-light: #fffaf1;
+  min-height: 100dvh;
+  color: var(--risk-ink);
+  background:
+    radial-gradient(circle at 82% 10%, rgba(91, 24, 24, 0.07), transparent 26rem),
+    var(--risk-paper);
+  font-family: var(--font-geist-sans), "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.risk-home-shell *,
+.risk-home-shell *::before,
+.risk-home-shell *::after {
+  box-sizing: border-box;
+}
+
+.risk-home-shell a {
+  color: inherit;
+}
+
+.risk-home-shell :is(a, button):focus-visible {
+  outline: 3px solid var(--risk-wine-soft);
+  outline-offset: 4px;
+}
+
+.risk-home-skip {
+  position: fixed;
+  z-index: 60;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.65rem 0.9rem;
+  color: var(--risk-light) !important;
+  background: var(--risk-wine);
+  text-decoration: none;
+  transform: translateY(-180%);
+  transition: transform 180ms ease;
+}
+
+.risk-home-skip:focus {
+  transform: translateY(0);
+}
+
+.risk-home-header {
+  border-bottom: 1px solid var(--risk-line);
+  background: rgba(245, 239, 230, 0.88);
+  backdrop-filter: blur(18px);
+}
+
+.risk-home-header-main,
+.risk-home-category-rail,
+.risk-home-hero,
+.risk-home-section,
+.risk-home-follow,
+.risk-home-footer-strip {
+  width: min(100% - 3rem, 1280px);
+  margin-inline: auto;
+}
+
+.risk-home-header-main {
+  min-height: 5rem;
+  display: grid;
+  grid-template-columns: minmax(12rem, 1fr) auto minmax(12rem, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.risk-home-brand {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+}
+
+.risk-home-brand img {
+  width: 3.7rem;
+  height: 2.8rem;
+  object-fit: contain;
+}
+
+.risk-home-brand > span {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.risk-home-brand strong {
+  font-family: "Noto Serif SC", Georgia, serif;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.risk-home-brand small,
+.risk-home-issue,
+.risk-home-nav,
+.risk-home-category-rail,
+.risk-home-eyebrow,
+.risk-home-section-heading p,
+.risk-home-section-heading > span,
+.risk-home-featured-meta,
+.risk-home-topic-kicker,
+.risk-home-post-meta,
+.risk-home-follow > div > p,
+.risk-home-footer-strip {
+  font-family: var(--font-geist-mono), "JetBrains Mono", ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.risk-home-brand small {
+  color: var(--risk-muted);
+  font-size: 0.63rem;
+  letter-spacing: 0.12em;
+}
+
+.risk-home-issue {
+  color: var(--risk-muted);
+  font-size: 0.67rem;
+  letter-spacing: 0.16em;
+}
+
+.risk-home-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.15rem;
+  font-size: 0.75rem;
+}
+
+.risk-home-nav a {
+  color: var(--risk-muted);
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.risk-home-nav a:hover {
+  color: var(--risk-wine);
+}
+
+.risk-home-category-rail {
+  min-height: 2.7rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  color: var(--risk-muted);
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+.risk-home-category-rail::-webkit-scrollbar {
+  display: none;
+}
+
+.risk-home-category-rail span {
+  color: var(--risk-wine-soft);
+  letter-spacing: 0.12em;
+}
+
+.risk-home-category-rail a {
+  text-decoration: none;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.risk-home-category-rail a:hover {
+  color: var(--risk-ink);
+  transform: translateY(-1px);
+}
+
+.risk-home-hero {
+  min-height: min(46rem, calc(100dvh - 8rem));
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(18rem, 0.55fr);
+  gap: clamp(3rem, 8vw, 8rem);
+  align-items: end;
+  padding-block: clamp(5rem, 10vw, 9rem) clamp(4rem, 8vw, 7rem);
+}
+
+.risk-home-hero-copy {
+  max-width: 56rem;
+}
+
+.risk-home-eyebrow {
+  margin: 0 0 1.6rem;
+  color: var(--risk-wine-soft);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+}
+
+.risk-home-hero h1 {
+  max-width: 14ch;
+  margin: 0;
+  font-family: "Noto Serif SC", "Source Han Serif SC", Georgia, serif;
+  font-size: clamp(3.2rem, 7.2vw, 7.6rem);
+  font-weight: 900;
+  line-height: 0.99;
+  letter-spacing: -0.065em;
+  text-wrap: balance;
+}
+
+.risk-home-intro {
+  max-width: 43rem;
+  margin: 2rem 0 0;
+  color: var(--risk-muted);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.85;
+  text-wrap: pretty;
+}
+
+.risk-home-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.75rem;
+  margin-top: 2.4rem;
+}
+
+.risk-home-hero-actions a {
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid currentColor;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.risk-home-hero-actions a:first-child {
+  color: var(--risk-wine);
+}
+
+.risk-home-hero-actions a:hover {
+  color: var(--risk-wine-soft);
+  transform: translateY(-2px);
+}
+
+.risk-home-manifesto {
+  position: relative;
+  padding: 1.75rem;
+  border-top: 3px solid var(--risk-wine);
+  border-bottom: 1px solid var(--risk-line);
+  background: rgba(255, 250, 241, 0.48);
+}
+
+.risk-home-manifesto::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(135deg, transparent 0 10px, rgba(91, 24, 24, 0.025) 10px 11px);
+}
+
+.risk-home-manifesto-mark {
+  color: var(--risk-wine);
+  font-family: "Noto Serif SC", Georgia, serif;
+  font-size: 2.7rem;
+  font-weight: 900;
+  letter-spacing: -0.08em;
+}
+
+.risk-home-manifesto > p {
+  position: relative;
+  z-index: 1;
+  margin: 2.5rem 0 1.8rem;
+  color: var(--risk-muted);
+  font-family: "Noto Serif SC", Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.risk-home-manifesto dl {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--risk-line);
+}
+
+.risk-home-manifesto dl div {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.risk-home-manifesto dt {
+  color: var(--risk-wine);
+  font-family: "Noto Serif SC", Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.risk-home-manifesto dd {
+  margin: 0;
+  color: var(--risk-muted);
+  font-size: 0.72rem;
+}
+
+.risk-home-section {
+  padding-block: clamp(4rem, 8vw, 7rem);
+  border-top: 1px solid var(--risk-line);
+  scroll-margin-top: 1rem;
+}
+
+.risk-home-section-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: flex-end;
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+.risk-home-section-heading p {
+  margin: 0 0 0.65rem;
+  color: var(--risk-wine-soft);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.risk-home-section-heading h2 {
+  max-width: 25ch;
+  margin: 0;
+  font-family: "Noto Serif SC", Georgia, serif;
+  font-size: clamp(1.8rem, 3.6vw, 3.4rem);
+  line-height: 1.16;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.risk-home-section-heading > span {
+  padding-bottom: 0.35rem;
+  color: var(--risk-muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+.risk-home-featured-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(10rem, 0.28fr);
+  min-height: 31rem;
+  overflow: hidden;
+  color: var(--risk-light) !important;
+  background: var(--risk-wine);
+  text-decoration: none;
+  box-shadow: 0 2rem 5rem rgba(73, 32, 22, 0.17);
+  transition: transform 260ms ease, box-shadow 260ms ease;
+}
+
+.risk-home-featured-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 2.5rem 6rem rgba(73, 32, 22, 0.23);
+}
+
+.risk-home-featured-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(2rem, 5vw, 4.5rem);
+}
+
+.risk-home-featured-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.25rem;
+  align-items: center;
+  color: rgba(255, 250, 241, 0.7);
+  font-size: 0.72rem;
+}
+
+.risk-home-featured-meta span,
+.risk-home-featured-meta em {
+  color: var(--risk-light);
+}
+
+.risk-home-featured-meta em {
+  padding: 0.2rem 0.45rem;
+  border: 1px solid rgba(255, 250, 241, 0.35);
+  font-style: normal;
+}
+
+.risk-home-featured-copy h3 {
+  max-width: 18ch;
+  margin: auto 0 1.5rem;
+  padding-top: 3rem;
+  font-family: "Noto Serif SC", Georgia, serif;
+  font-size: clamp(2.25rem, 5vw, 5.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+
+.risk-home-featured-copy > p {
+  max-width: 50rem;
+  margin: 0 0 2.5rem;
+  color: rgba(255, 250, 241, 0.74);
+  font-size: 1rem;
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+
+.risk-home-read-link {
+  width: fit-content;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid rgba(255, 250, 241, 0.65);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.risk-home-read-link b {
+  display: inline-block;
+  margin-left: 0.25rem;
+  transition: transform 180ms ease;
+}
+
+.risk-home-featured-card:hover .risk-home-read-link b {
+  transform: translate(3px, -3px);
+}
+
+.risk-home-featured-art {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+  border-left: 1px solid rgba(255, 250, 241, 0.16);
+  background:
+    repeating-linear-gradient(135deg, transparent 0 13px, rgba(255, 250, 241, 0.07) 13px 14px),
+    rgba(0, 0, 0, 0.06);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  writing-mode: vertical-rl;
+}
+
+.risk-home-featured-art strong {
+  font-family: "Noto Serif SC", Georgia, serif;
+  font-size: clamp(5rem, 10vw, 10rem);
+  line-height: 0.8;
+  letter-spacing: -0.1em;
+  opacity: 0.16;
+  writing-mode: horizontal-tb;
+}
+
+.risk-home-topic-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 1px;
+  background: var(--risk-line);
+  border: 1px solid var(--risk-line);
+}
+
+.risk-home-topic-card {
+  position: relative;
+  min-height: 15rem;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 1.4rem;
+  align-items: start;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  background: var(--risk-paper);
+  text-decoration: none;
+  transition: color 220ms ease, background 220ms ease;
+}
+
+.risk-home-topic-card:first-child {
+  grid-row: span 2;
+  min-height: 30rem;
+  align-content: end;
+  background:
+    radial-gradient(circle at 10% 5%, rgba(91, 24, 24, 0.12), transparent 18rem),
+    var(--risk-paper-deep);
+}
+
+.risk-home-topic-card:hover {
+  z-index: 1;
+  color: var(--risk-light);
+  background: var(--risk-wine);
+}
+
+.risk-home-topic-number {
+  color: var(--risk-wine-soft);
+  font-family: "Noto Serif SC", Georgia, serif;
+  font-size: 2.7rem;
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.07em;
+  transition: color 220ms ease;
+}
+
+.risk-home-topic-card:hover .risk-home-topic-number,
+.risk-home-topic-card:hover .risk-home-topic-kicker,
+.risk-home-topic-card:hover p,
+.risk-home-topic-card:hover small {
+  color: rgba(255, 250, 241, 0.72);
+}
+
+.risk-home-topic-kicker {
+  margin-bottom: 0.8rem;
+  color: var(--risk-wine-soft);
+  font-size: 0.67rem;
+  letter-spacing: 0.12em;
+}
+
+.risk-home-topic-card h3 {
+  margin: 0 0 0.8rem;
+  font-family: "Noto Serif SC", Georgia, serif;
+  font-size: clamp(1.45rem, 2.5vw, 2.4rem);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.risk-home-topic-card p {
+  max-width: 36rem;
+  margin: 0;
+  color: var(--risk-muted);
+  font-size: 0.88rem;
+  line-height: 1.75;
+}
+
+.risk-home-topic-card small {
+  display: block;
+  margin-top: 1.5rem;
+  color: var(--risk-muted);
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+
+.risk-home-topic-card > span {
+  font-size: 1.2rem;
+  transition: transform 180ms ease;
+}
+
+.risk-home-topic-card:hover > span {
+  transform: translate(3px, -3px);
+}
+
+.risk-home-post-list {
+  border-top: 2px solid var(--risk-ink);
+}
+
+.risk-home-post-row {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr) 2rem;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: start;
+  padding-block: clamp(1.75rem, 4vw, 3rem);
+  border-bottom: 1px solid var(--risk-line);
+  text-decoration: none;
+  transition: color 200ms ease, padding-inline 200ms ease, background 200ms ease;
+}
+
+.risk-home-post-row:hover {
+  padding-inline: 1.25rem;
+  color: var(--risk-wine);
+  background: rgba(255, 250, 241, 0.55);
+}
+
+.risk-home-post-number {
+  color: var(--risk-line);
+  font-family: "Noto Serif SC", Georgia, serif;
+  font-size: clamp(2.6rem, 5vw, 5rem);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.08em;
+}
+
+.risk-home-post-main {
+  max-width: 62rem;
+}
+
+.risk-home-post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.2rem;
+  margin-bottom: 0.75rem;
+  color: var(--risk-muted);
+  font-size: 0.68rem;
+}
+
+.risk-home-post-meta span {
+  color: var(--risk-wine-soft);
+  font-weight: 600;
+}
+
+.risk-home-post-main h3 {
+  max-width: 34ch;
+  margin: 0;
+  font-family: "Noto Serif SC", Georgia, serif;
+  font-size: clamp(1.35rem, 2.7vw, 2.6rem);
+  line-height: 1.22;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.risk-home-post-main > p {
+  max-width: 52rem;
+  display: -webkit-box;
+  margin: 0.9rem 0 0;
+  overflow: hidden;
+  color: var(--risk-muted);
+  font-size: 0.9rem;
+  line-height: 1.75;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-wrap: pretty;
+}
+
+.risk-home-post-arrow {
+  font-size: 1.25rem;
+  transition: transform 180ms ease;
+}
+
+.risk-home-post-row:hover .risk-home-post-arrow {
+  transform: translate(3px, -3px);
+}
+
+.risk-home-list-empty,
+.risk-home-empty {
+  color: var(--risk-muted);
+}
+
+.risk-home-empty {
+  width: min(100% - 3rem, 1280px);
+  margin-inline: auto;
+  padding-block: 6rem;
+  border-top: 1px solid var(--risk-line);
+}
+
+.risk-home-empty p {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  color: var(--risk-wine-soft);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+}
+
+.risk-home-empty h2 {
+  margin: 1rem 0;
+  font-family: "Noto Serif SC", Georgia, serif;
+  font-size: clamp(2rem, 4vw, 4rem);
+}
+
+.risk-home-follow {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  align-items: end;
+  margin-bottom: clamp(4rem, 8vw, 7rem);
+  padding: clamp(2rem, 5vw, 4rem);
+  color: var(--risk-light);
+  background:
+    repeating-linear-gradient(135deg, transparent 0 16px, rgba(255, 250, 241, 0.05) 16px 17px),
+    #2c1714;
+}
+
+.risk-home-follow > div > p {
+  margin: 0 0 0.8rem;
+  color: #d8a39a;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+}
+
+.risk-home-follow h2 {
+  max-width: 18ch;
+  margin: 0;
+  font-family: "Noto Serif SC", Georgia, serif;
+  font-size: clamp(1.7rem, 3.5vw, 3.4rem);
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.risk-home-follow-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex-shrink: 0;
+}
+
+.risk-home-follow-links a {
+  width: fit-content;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid rgba(255, 250, 241, 0.4);
+  color: var(--risk-light);
+  font-size: 0.82rem;
+  text-decoration: none;
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.risk-home-follow-links a:hover {
+  border-color: var(--risk-light);
+  transform: translateX(3px);
+}
+
+.risk-home-footer-strip {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.4rem;
+  border-top: 2px solid var(--risk-ink);
+  color: var(--risk-muted);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+}
+
+@media (max-width: 900px) {
+  .risk-home-header-main {
+    grid-template-columns: 1fr auto;
+  }
+
+  .risk-home-issue {
+    display: none;
+  }
+
+  .risk-home-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .risk-home-manifesto {
+    max-width: 30rem;
+  }
+
+  .risk-home-featured-card {
+    grid-template-columns: 1fr 7rem;
+  }
+
+  .risk-home-topic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .risk-home-topic-card:first-child {
+    grid-row: auto;
+    min-height: 20rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .risk-home-header-main,
+  .risk-home-category-rail,
+  .risk-home-hero,
+  .risk-home-section,
+  .risk-home-follow,
+  .risk-home-footer-strip,
+  .risk-home-empty {
+    width: min(100% - 2rem, 1280px);
+  }
+
+  .risk-home-header-main {
+    min-height: 4.3rem;
+  }
+
+  .risk-home-brand img {
+    width: 3.1rem;
+    height: 2.3rem;
+  }
+
+  .risk-home-brand strong {
+    font-size: 0.9rem;
+  }
+
+  .risk-home-brand small,
+  .risk-home-nav > a {
+    display: none;
+  }
+
+  .risk-home-nav {
+    gap: 0.65rem;
+  }
+
+  .risk-home-category-rail {
+    gap: 1rem;
+  }
+
+  .risk-home-hero {
+    padding-block: 4.5rem 4rem;
+  }
+
+  .risk-home-hero h1 {
+    font-size: clamp(2.8rem, 13vw, 4.4rem);
+    letter-spacing: -0.055em;
+  }
+
+  .risk-home-intro {
+    font-size: 0.98rem;
+  }
+
+  .risk-home-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .risk-home-featured-card {
+    min-height: 31rem;
+    grid-template-columns: 1fr;
+  }
+
+  .risk-home-featured-copy {
+    padding: 1.7rem;
+  }
+
+  .risk-home-featured-copy h3 {
+    padding-top: 3.5rem;
+    font-size: clamp(2rem, 10vw, 3.2rem);
+  }
+
+  .risk-home-featured-art {
+    display: none;
+  }
+
+  .risk-home-topic-card,
+  .risk-home-topic-card:first-child {
+    min-height: auto;
+    grid-template-columns: 3.5rem minmax(0, 1fr) auto;
+    align-content: start;
+    padding: 1.5rem 1.2rem;
+  }
+
+  .risk-home-topic-number {
+    font-size: 2.2rem;
+  }
+
+  .risk-home-post-row {
+    grid-template-columns: 3.25rem minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .risk-home-post-row:hover {
+    padding-inline: 0.5rem;
+  }
+
+  .risk-home-post-number {
+    font-size: 2.5rem;
+  }
+
+  .risk-home-post-arrow {
+    display: none;
+  }
+
+  .risk-home-follow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .risk-home-footer-strip {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .risk-home-shell *,
+  .risk-home-shell *::before,
+  .risk-home-shell *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* AI终端：860px */
 [data-theme="terminal"] .page-main {
   max-width: 860px;

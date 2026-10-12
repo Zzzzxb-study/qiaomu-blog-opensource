@@ -1,4 +1,5 @@
 import type { Post, PostWithTags } from '@/lib/repositories/types'
+import { cleanPostDescription } from '@/lib/post-utils'
 
 export function parsePostTags(value: string | null): string[] {
   return value ? JSON.parse(value) : []
@@ -11,6 +12,7 @@ export function normalizePostStatus(post: Pick<Post, 'status' | 'deleted_at'>): 
 export function mapPostWithTags(post: Post): PostWithTags {
   return {
     ...post,
+    description: cleanPostDescription(post.description),
     status: normalizePostStatus(post),
     tags: parsePostTags(post.tags),
   }
